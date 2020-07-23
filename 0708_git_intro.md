@@ -128,11 +128,17 @@ commit 하면 history로 기록(바뀐부분 기록)
 
 ## branch, pull request
 
+각자 컴퓨터에서 
 
+원하는 폴더 들어감
+
+git clone 해당 repo url~~
+
+git pull
 
 `$ git checkout -b changyoon/add_cookie_in_head` branch 생성
 
-	- branch 상태와 master 상태일때 각각의 상태에 맞게 폴더내용이 보인다
+	- 실제 폴더 들어가보면 branch 상태와 master 상태일때 각각의 상태에 맞게 폴더내용이 보인다
 
 확인 `$ git branch`
 
