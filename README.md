@@ -1,5 +1,19 @@
 # mulcamB_1조
-project 진행중~
+# project BOK(Bank of Korea) 의사록 분석 논문구현
+> Deciphering Monetary Policy Board Minutes thorough Text Mining Approach: The Case of Korea
+
+진행순서
+데이터 크롤링 -> 전처리 -> ngram polarity계산(hawkish/dovish) -> MPB의사록 Tone계산 -> 기준금리와 비교(시각화 및 상관분석)
+
+
+
+## 코드파일 설명
+Crawling_Preprocessing/naver_crawler
+./naver_crawler/spiders/naver_spider.py
+:네이버 뉴스 '금리'검색하여 연합뉴스,연합인포맥스, 이데일리 3사의 뉴스를 크롤링
+./preprocessing_edaily.py, ~infomax.py, ~yunhabnew.py 에서 각 뉴스사별 기사 전처리
+./sum_allnew.py 에서 전처리 된 파일 concat 후 time으로 groupby함
+
 
 채권 데이터 추출.ipynb 
  - 네이버 증권사 홈페이지에서 채권보고서 관련 정보(제목, 증권사, 날짜)와 다운로드용 url 크롤링
