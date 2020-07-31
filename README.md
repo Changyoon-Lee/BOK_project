@@ -1,6 +1,9 @@
 # mulcamB_1조_BOK 의사록 논문구현
 > Deciphering Monetary Policy Board Minutes through Text Mining Approach: The Case of 
 
+> 진행순서:
+> 데이터크롤링 -> 전처리 -> word porarity 계산 -> MPB tone계산 -> 기준금리와의 corr계산 및 시각화 -> pram변경하며 grid search
+
 
 ## 코드파일 설명
 Crawling_Preprocessing/naver_crawler
