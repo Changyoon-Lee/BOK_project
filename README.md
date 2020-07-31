@@ -7,7 +7,7 @@
 
 ## 코드파일 설명
 Crawling_Preprocessing/naver_crawler
-./naver_crawler/spiders/naver_spider.py
+/naver_crawler/spiders/naver_spider.py
 :네이버 뉴스 '금리'검색하여 연합뉴스,연합인포맥스, 이데일리 3사의 뉴스를 크롤링
 ./preprocessing_edaily.py, ~infomax.py, ~yunhabnew.py 에서 각 뉴스사별 기사 전처리
 ./sum_allnew.py 에서 전처리 된 파일 concat 후 time으로 groupby함
@@ -19,13 +19,13 @@ Crawling_Preprocessing/naver_crawler
  - Beautiful Soup를 이용해 네이버 증권사 홈페이지에서 채권보고서 관련 정보(제목, 증권사, 날짜)와 다운로드용 url 크롤링
  - query 부분을 수정하여 데이터 수집 날짜를 지정할 수 있다.
  - 해당 보고서의 다운로드용 url을 request하여 원하는 날짜의 pdf파일을 다운로드할 수 있다.
- 
+
  2. Tika parser를 이용해 다운로드한 PDF를 텍스트로 변환
  - pdfminer와 tika 양쪽 모두를 사용해 변환한 결과, tika가 더 높은 인식률을 보였다.
   > pdfminer가 인식하지 못해 생략한 문장을 tika를 통해 추출한 결과에선 찾아볼 수 있었다.
   > 이외에도, pdfminer를 사용한 텍스트 변환보다 tika를 사용한 텍스트 변환이 더 빠른 복도를 보였다.
  - tika parser를 이용해 다운로드한 pdf파일의 텍스트를 가져올 수 있다.
- 
+
 
 한국은행_의사록_코드_정리.ipynb
 - 한국은행 의사록 데이터 수집 및 정제
@@ -47,3 +47,9 @@ Crawling_Preprocessing/naver_crawler
 6.pd.DataFtame을 통해 date,sec2,sec3의 데이터를 concat하였으며 결측지 데이터를 삭제 한 후에 sec2,sec3의 데이터를 하나로 합쳐준다.
 
 7. data를 수집하고 정제하는 과정에서 대락적인 개요만 설명했고 자세한 것들을 코드에 주석처리 해 두었습니다. 의사록 데이터는 crawling과정이 어렵지는 않기 때문에(저는 삽질을 많이 했지만...) 데이터의 수집 과정만 짧게 설명하고 코드는 fitz정도만 소개해주어도 좋을 것 같습니다.ㅎㅎ
+
+
+
+CALLRATE.ipynb : 콜금리 크롤링
+
+기준금리_전체기간.ipynb : 기준금리 크롤링 및 없는 날짜 이전값으로 채우기
