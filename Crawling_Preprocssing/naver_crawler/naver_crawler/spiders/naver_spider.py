@@ -57,7 +57,7 @@ class NaverSpider(scrapy.Spider):
 
             if med=='연합뉴스'or med =='이데일리':   
                 url=sel.xpath('dl/dd/a/@href').extract()[0]
-                time=sel.xpath('dl/dd[1]/text()').getall()[1]//*[@id="sp_nws1"]/dl/dd[1]/text()
+                time=sel.xpath('dl/dd[1]/text()').getall()[1]
                 print(time)
                 yield scrapy.Request(url=url, callback=self.parse_body, meta={'med':med,'time':time})
             elif med=='연합인포맥스':
@@ -84,18 +84,4 @@ class NaverSpider(scrapy.Spider):
         item['body'] = response.xpath('//*[@id="article-view-content-div"]/text()').getall()
         item['media'] = response.meta['med']
         yield item
-    # def parse_body(self, response):
-        
-    #     item = NaverCrawlerItem()
-    #     item['body'] = response.xpath('//*[@id="articleBodyContents"]/text()[1]').extract()[0]
-    #     item['time'] = response.xpath('//*[@id="main_content"]/div[1]/div[3]/div/span/text()').extract()[0]
-    #     item['title'] = response.xpath('//*[@id="articleTitle"]/text()').extract()[0]
-    #     yield item
-
-        # page = re.findall('start=(.*)',response.url)
-        # filename = 'quotes-%s.html' % page
-        # with open(filename, 'wb') as f:
-            
-        #     f.write(response.xpath())
-        #self.log('Saved file')
 

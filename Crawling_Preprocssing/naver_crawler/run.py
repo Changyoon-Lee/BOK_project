@@ -1,3 +1,5 @@
+##scrapy 실행하기
+
 import os
 from scrapy.cmdline import execute
 
