@@ -1,23 +1,18 @@
 # mulcamB_1조
-# project BOK(Bank of Korea) 의사록 분석 논문구현
-> Deciphering Monetary Policy Board Minutes thorough Text Mining Approach: The Case of Korea
-
-진행순서
-데이터 크롤링 -> 전처리 -> ngram polarity계산(hawkish/dovish) -> MPB의사록 Tone계산 -> 기준금리와 비교(시각화 및 상관분석)
-
-
-
-## 코드파일 설명
-Crawling_Preprocessing/naver_crawler
-./naver_crawler/spiders/naver_spider.py
-:네이버 뉴스 '금리'검색하여 연합뉴스,연합인포맥스, 이데일리 3사의 뉴스를 크롤링
-./preprocessing_edaily.py, ~infomax.py, ~yunhabnew.py 에서 각 뉴스사별 기사 전처리
-./sum_allnew.py 에서 전처리 된 파일 concat 후 time으로 groupby함
-
+project 진행중~
 
 채권 데이터 추출.ipynb 
- - 네이버 증권사 홈페이지에서 채권보고서 관련 정보(제목, 증권사, 날짜)와 다운로드용 url 크롤링
- - TIKA 를 이용해 다운로드한 PDF 채권 보고서 텍스트 마이닝
+ 1. 채권 보고서 데이터 수집
+ - Beautiful Soup를 이용해 네이버 증권사 홈페이지에서 채권보고서 관련 정보(제목, 증권사, 날짜)와 다운로드용 url 크롤링
+ - query 부분을 수정하여 데이터 수집 날짜를 지정할 수 있다.
+ - 해당 보고서의 다운로드용 url을 request하여 원하는 날짜의 pdf파일을 다운로드할 수 있다.
+ 
+ 2. Tika parser를 이용해 다운로드한 PDF를 텍스트로 변환
+ - pdfminer와 tika 양쪽 모두를 사용해 변환한 결과, tika가 더 높은 인식률을 보였다.
+  > pdfminer가 인식하지 못해 생략한 문장을 tika를 통해 추출한 결과에선 찾아볼 수 있었다.
+  > 이외에도, pdfminer를 사용한 텍스트 변환보다 tika를 사용한 텍스트 변환이 더 빠른 복도를 보였다.
+ - tika parser를 이용해 다운로드한 pdf파일의 텍스트를 가져올 수 있다.
+ 
 
 한국은행_의사록_코드_정리.ipynb
 - 한국은행 의사록 데이터 수집 및 정제
