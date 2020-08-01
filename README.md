@@ -55,7 +55,6 @@
 
 
 ### Pipeline 
-```mermaid
-graph LR
-A(ngramize) --> B(콜금리와merge) --> C(word polarity 계산) --> D(sent_tone, doc_tone계산) --> E(tone과 기준금리 비교시각화, corr계산)
-```
+
+ngramize --> 콜금리와merge --> word polarity 계산--> sent_tone, doc_tone계산 --> tone과 기준금리 비교시각화, corr계산
+
