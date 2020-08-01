@@ -6,10 +6,10 @@
 
 
 ## 코드파일 설명
-> Crawling_Preprocessing/naver_crawler\n
-> /naver_crawler/spiders/naver_spider.py :네이버 뉴스 '금리'검색하여 연합뉴스,연합인포맥스, 이데일리 3사의 뉴스를 크롤링\n
-> /preprocessing_edaily.py, ~infomax.py, ~yunhabnew.py 에서 각 뉴스사별 기사 전처리\n
-> /sum_allnew.py 에서 전처리 된 파일 concat 후 time으로 groupby함
+> Crawling_Preprocessing/naver_crawler/
+> naver_crawler/spiders/naver_spider.py :네이버 뉴스 '금리'검색하여 연합뉴스,연합인포맥스, 이데일리 3사의 뉴스를 크롤링
+> preprocessing_edaily.py, ~infomax.py, ~yunhabnew.py 에서 각 뉴스사별 기사 전처리
+> sum_allnew.py 에서 전처리 된 파일 concat 후 time으로 groupby함
 
 
 
