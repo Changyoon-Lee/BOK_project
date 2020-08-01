@@ -6,15 +6,14 @@
 
 
 ## 코드파일 설명
-Crawling_Preprocessing/naver_crawler
-/naver_crawler/spiders/naver_spider.py
-:네이버 뉴스 '금리'검색하여 연합뉴스,연합인포맥스, 이데일리 3사의 뉴스를 크롤링
-./preprocessing_edaily.py, ~infomax.py, ~yunhabnew.py 에서 각 뉴스사별 기사 전처리
-./sum_allnew.py 에서 전처리 된 파일 concat 후 time으로 groupby함
+> Crawling_Preprocessing/naver_crawler
+> /naver_crawler/spiders/naver_spider.py :네이버 뉴스 '금리'검색하여 연합뉴스,연합인포맥스, 이데일리 3사의 뉴스를 크롤링
+> /preprocessing_edaily.py, ~infomax.py, ~yunhabnew.py 에서 각 뉴스사별 기사 전처리
+> /sum_allnew.py 에서 전처리 된 파일 concat 후 time으로 groupby함
 
 
 
-채권 데이터 추출.ipynb 
+### 채권 데이터 추출.ipynb 
  1. 채권 보고서 데이터 수집
  - Beautiful Soup를 이용해 네이버 증권사 홈페이지에서 채권보고서 관련 정보(제목, 증권사, 날짜)와 다운로드용 url 크롤링
  - query 부분을 수정하여 데이터 수집 날짜를 지정할 수 있다.
@@ -27,7 +26,7 @@ Crawling_Preprocessing/naver_crawler
  - tika parser를 이용해 다운로드한 pdf파일의 텍스트를 가져올 수 있다.
 
 
-한국은행_의사록_코드_정리.ipynb
+### 한국은행_의사록_코드_정리.ipynb
 - 한국은행 의사록 데이터 수집 및 정제
 1. crawling을 이용해서 한국은행 pdf_url을 가져오는 코드 작성
 - .attrs[' ']를 이용하여 여러가지 리스트 중 원하는 .pdf파일만 가져올 수 있다.
@@ -50,6 +49,13 @@ Crawling_Preprocessing/naver_crawler
 
 
 
-CALLRATE.ipynb : 콜금리 크롤링
+### CALLRATE.ipynb : 콜금리 크롤링
 
-기준금리_전체기간.ipynb : 기준금리 크롤링 및 없는 날짜 이전값으로 채우기
+### 기준금리_전체기간.ipynb : 기준금리 크롤링 및 없는 날짜 이전값으로 채우기
+
+
+### Pipeline 
+```mermaid
+graph LR
+A(ngramize) --> B(콜금리와merge) --> C(word polarity 계산) --> D(sent_tone, doc_tone계산) --> E(tone과 기준금리 비교시각화, corr계산)
+```
